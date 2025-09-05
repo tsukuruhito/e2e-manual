@@ -1,0 +1,111 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e8]: 管理システム
+      - generic [ref=e12]:
+        - heading "管理システム" [level=2] [ref=e13]
+        - generic [ref=e14]:
+          - link "ダッシュボード" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - img
+            - text: ダッシュボード
+          - link "ユーザー管理" [ref=e16] [cursor=pointer]:
+            - /url: /users
+            - img
+            - text: ユーザー管理
+          - link "商品管理" [ref=e17] [cursor=pointer]:
+            - /url: /products
+            - img
+            - text: 商品管理
+          - link "注文管理" [ref=e18] [cursor=pointer]:
+            - /url: /orders
+            - img
+            - text: 注文管理
+          - link "レポート" [ref=e19] [cursor=pointer]:
+            - /url: /reports
+            - img
+            - text: レポート
+    - main [ref=e21]:
+      - generic [ref=e22]:
+        - heading "注文管理" [level=2] [ref=e24]
+        - generic [ref=e25]:
+          - generic [ref=e27]: 注文一覧
+          - table [ref=e30]:
+            - rowgroup [ref=e31]:
+              - row "注文ID 顧客名 メールアドレス 合計金額 ステータス 注文日 商品数 アクション" [ref=e32]:
+                - cell "注文ID" [ref=e33]
+                - cell "顧客名" [ref=e34]
+                - cell "メールアドレス" [ref=e35]
+                - cell "合計金額" [ref=e36]
+                - cell "ステータス" [ref=e37]
+                - cell "注文日" [ref=e38]
+                - cell "商品数" [ref=e39]
+                - cell "アクション" [ref=e40]
+            - rowgroup [ref=e41]:
+              - row "ORD-2024-001 山田太郎 yamada@example.com ¥12,000 完了 2024-01-15 3" [ref=e42]:
+                - cell "ORD-2024-001" [ref=e43]
+                - cell "山田太郎" [ref=e44]
+                - cell "yamada@example.com" [ref=e45]
+                - cell "¥12,000" [ref=e46]
+                - cell "完了" [ref=e47]:
+                  - generic [ref=e48]: 完了
+                - cell "2024-01-15" [ref=e49]
+                - cell "3" [ref=e50]
+                - cell [ref=e51]:
+                  - button [ref=e52]:
+                    - img
+              - row "ORD-2024-002 佐藤花子 sato@example.com ¥8,500 処理中 2024-01-14 2" [ref=e53]:
+                - cell "ORD-2024-002" [ref=e54]
+                - cell "佐藤花子" [ref=e55]
+                - cell "sato@example.com" [ref=e56]
+                - cell "¥8,500" [ref=e57]
+                - cell "処理中" [ref=e58]:
+                  - generic [ref=e59]: 処理中
+                - cell "2024-01-14" [ref=e60]
+                - cell "2" [ref=e61]
+                - cell [ref=e62]:
+                  - button [active] [ref=e63]:
+                    - img
+              - row "ORD-2024-003 鈴木一郎 suzuki@example.com ¥25,000 発送済み 2024-01-13 1" [ref=e64]:
+                - cell "ORD-2024-003" [ref=e65]
+                - cell "鈴木一郎" [ref=e66]
+                - cell "suzuki@example.com" [ref=e67]
+                - cell "¥25,000" [ref=e68]
+                - cell "発送済み" [ref=e69]:
+                  - generic [ref=e70]: 発送済み
+                - cell "2024-01-13" [ref=e71]
+                - cell "1" [ref=e72]
+                - cell [ref=e73]:
+                  - button [ref=e74]:
+                    - img
+              - row "ORD-2024-004 田中美咲 tanaka@example.com ¥4,500 完了 2024-01-12 1" [ref=e75]:
+                - cell "ORD-2024-004" [ref=e76]
+                - cell "田中美咲" [ref=e77]
+                - cell "tanaka@example.com" [ref=e78]
+                - cell "¥4,500" [ref=e79]
+                - cell "完了" [ref=e80]:
+                  - generic [ref=e81]: 完了
+                - cell "2024-01-12" [ref=e82]
+                - cell "1" [ref=e83]
+                - cell [ref=e84]:
+                  - button [ref=e85]:
+                    - img
+              - row "ORD-2024-005 高橋健太 takahashi@example.com ¥18,000 キャンセル 2024-01-11 4" [ref=e86]:
+                - cell "ORD-2024-005" [ref=e87]
+                - cell "高橋健太" [ref=e88]
+                - cell "takahashi@example.com" [ref=e89]
+                - cell "¥18,000" [ref=e90]
+                - cell "キャンセル" [ref=e91]:
+                  - generic [ref=e92]: キャンセル
+                - cell "2024-01-11" [ref=e93]
+                - cell "4" [ref=e94]
+                - cell [ref=e95]:
+                  - button [ref=e96]:
+                    - img
+  - button "Open Next.js Dev Tools" [ref=e102] [cursor=pointer]:
+    - img [ref=e103] [cursor=pointer]
+  - alert [ref=e106]
+```

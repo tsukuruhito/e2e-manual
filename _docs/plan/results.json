@@ -1,0 +1,155 @@
+{
+  "config": {
+    "configFile": "/Users/suzukitoma/Desktop/e2e-manual/playwright.config.ts",
+    "rootDir": "/Users/suzukitoma/Desktop/e2e-manual/_docs/script",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "_docs/plan/html-reports"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "_docs/plan/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/suzukitoma/Desktop/e2e-manual/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/suzukitoma/Desktop/e2e-manual/_docs/script",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 5,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "orders.spec.ts",
+      "file": "orders.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "注文管理機能",
+          "file": "orders.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "注文管理操作フロー",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30849,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/suzukitoma/Desktop/e2e-manual/_docs/script/orders.spec.ts",
+                            "column": 16,
+                            "line": 42
+                          },
+                          "message": "Error: page.selectOption: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('select[name=\"status\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 40 |\u001b[39m     \u001b[90m// 4. ステータス変更実行\u001b[39m\n \u001b[90m 41 |\u001b[39m     \u001b[90m// ステータスを「発送済み」に変更（ラジオボタンまたはセレクトボックスを想定）\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 42 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mselectOption(\u001b[32m'select[name=\"status\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'発送済み'\u001b[39m)\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 43 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"保存\")'\u001b[39m)\n \u001b[90m 44 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m1000\u001b[39m) \u001b[90m// 更新処理完了を待つ\u001b[39m\n \u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({\u001b[0m\n\u001b[2m    at /Users/suzukitoma/Desktop/e2e-manual/_docs/script/orders.spec.ts:42:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-05T08:17:39.262Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/suzukitoma/Desktop/e2e-manual/test-results/orders-注文管理機能-注文管理操作フロー-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/suzukitoma/Desktop/e2e-manual/test-results/orders-注文管理機能-注文管理操作フロー-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/suzukitoma/Desktop/e2e-manual/test-results/orders-注文管理機能-注文管理操作フロー-chromium/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "de3f15501f825e0a6f88-3d3b886a981f0a485e67",
+              "file": "orders.spec.ts",
+              "line": 4,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-09-05T08:17:38.935Z",
+    "duration": 31500.789,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,131 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e8]: 管理システム
+      - generic [ref=e12]:
+        - heading "管理システム" [level=2] [ref=e13]
+        - generic [ref=e14]:
+          - link "ダッシュボード" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - img
+            - text: ダッシュボード
+          - link "ユーザー管理" [ref=e16] [cursor=pointer]:
+            - /url: /users
+            - img
+            - text: ユーザー管理
+          - link "商品管理" [ref=e17] [cursor=pointer]:
+            - /url: /products
+            - img
+            - text: 商品管理
+          - link "注文管理" [ref=e18] [cursor=pointer]:
+            - /url: /orders
+            - img
+            - text: 注文管理
+          - link "レポート" [ref=e19] [cursor=pointer]:
+            - /url: /reports
+            - img
+            - text: レポート
+    - main [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - heading "商品管理" [level=2] [ref=e24]
+          - button "新規商品" [ref=e26]:
+            - img
+            - text: 新規商品
+        - generic [ref=e27]:
+          - generic [ref=e29]: 商品一覧
+          - table [ref=e32]:
+            - rowgroup [ref=e33]:
+              - row "商品名 カテゴリ 価格 在庫数 ステータス 売上数 アクション" [ref=e34]:
+                - cell "商品名" [ref=e35]
+                - cell "カテゴリ" [ref=e36]
+                - cell "価格" [ref=e37]
+                - cell "在庫数" [ref=e38]
+                - cell "ステータス" [ref=e39]
+                - cell "売上数" [ref=e40]
+                - cell "アクション" [ref=e41]
+            - rowgroup [ref=e42]:
+              - row "プレミアムノートブック 文具 ¥1,200 45 在庫あり 234" [ref=e43]:
+                - cell "プレミアムノートブック" [ref=e44]
+                - cell "文具" [ref=e45]
+                - cell "¥1,200" [ref=e46]
+                - cell "45" [ref=e47]
+                - cell "在庫あり" [ref=e48]:
+                  - generic [ref=e49]: 在庫あり
+                - cell "234" [ref=e50]
+                - cell [ref=e51]:
+                  - button [active] [ref=e52]:
+                    - img
+              - row "ワイヤレスイヤホン 電子機器 ¥8,500 12 在庫少 567" [ref=e53]:
+                - cell "ワイヤレスイヤホン" [ref=e54]
+                - cell "電子機器" [ref=e55]
+                - cell "¥8,500" [ref=e56]
+                - cell "12" [ref=e57]
+                - cell "在庫少" [ref=e58]:
+                  - generic [ref=e59]: 在庫少
+                - cell "567" [ref=e60]
+                - cell [ref=e61]:
+                  - button [ref=e62]:
+                    - img
+              - row "コーヒーカップ キッチン用品 ¥1,800 78 在庫あり 123" [ref=e63]:
+                - cell "コーヒーカップ" [ref=e64]
+                - cell "キッチン用品" [ref=e65]
+                - cell "¥1,800" [ref=e66]
+                - cell "78" [ref=e67]
+                - cell "在庫あり" [ref=e68]:
+                  - generic [ref=e69]: 在庫あり
+                - cell "123" [ref=e70]
+                - cell [ref=e71]:
+                  - button [ref=e72]:
+                    - img
+              - row "デスクチェア 家具 ¥25,000 5 在庫少 89" [ref=e73]:
+                - cell "デスクチェア" [ref=e74]
+                - cell "家具" [ref=e75]
+                - cell "¥25,000" [ref=e76]
+                - cell "5" [ref=e77]
+                - cell "在庫少" [ref=e78]:
+                  - generic [ref=e79]: 在庫少
+                - cell "89" [ref=e80]
+                - cell [ref=e81]:
+                  - button [ref=e82]:
+                    - img
+              - row "LEDデスクライト 電子機器 ¥4,500 23 在庫あり 345" [ref=e83]:
+                - cell "LEDデスクライト" [ref=e84]
+                - cell "電子機器" [ref=e85]
+                - cell "¥4,500" [ref=e86]
+                - cell "23" [ref=e87]
+                - cell "在庫あり" [ref=e88]:
+                  - generic [ref=e89]: 在庫あり
+                - cell "345" [ref=e90]
+                - cell [ref=e91]:
+                  - button [ref=e92]:
+                    - img
+              - row "テスト商品 テストカテゴリ ¥5,000 100 在庫あり 0" [ref=e93]:
+                - cell "テスト商品" [ref=e94]
+                - cell "テストカテゴリ" [ref=e95]
+                - cell "¥5,000" [ref=e96]
+                - cell "100" [ref=e97]
+                - cell "在庫あり" [ref=e98]:
+                  - generic [ref=e99]: 在庫あり
+                - cell "0" [ref=e100]
+                - cell [ref=e101]:
+                  - button [ref=e102]:
+                    - img
+              - row "テスト商品 テストカテゴリ ¥5,000 100 在庫あり 0" [ref=e103]:
+                - cell "テスト商品" [ref=e104]
+                - cell "テストカテゴリ" [ref=e105]
+                - cell "¥5,000" [ref=e106]
+                - cell "100" [ref=e107]
+                - cell "在庫あり" [ref=e108]:
+                  - generic [ref=e109]: 在庫あり
+                - cell "0" [ref=e110]
+                - cell [ref=e111]:
+                  - button [ref=e112]:
+                    - img
+  - button "Open Next.js Dev Tools" [ref=e118] [cursor=pointer]:
+    - img [ref=e119] [cursor=pointer]
+  - alert [ref=e122]
+```

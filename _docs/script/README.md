@@ -1,106 +1,86 @@
-# Playwright Test Scripts
+# Playwrightテストスクリプト
 
-## 概要
+このディレクトリには、E2Eテスト計画に基づいて生成されたPlaywrightテストスクリプトが含まれています。
 
-テスト計画ドキュメントから自動生成されたPlaywrightテストスクリプトを保存するディレクトリです。
+## ファイル一覧
 
-## ファイル構造
+- `dashboard.spec.ts` - ダッシュボード機能のテスト
+- `products.spec.ts` - 商品管理機能のテスト
+- `orders.spec.ts` - 注文管理機能のテスト
+- `users.spec.ts` - ユーザー管理機能のテスト
+- `reports.spec.ts` - レポート機能のテスト
+- `run-all-tests.spec.ts` - 統合テスト実行スクリプト
 
-```
-script/
-├── feature-name.spec.ts    # 各機能のテストスクリプト
-├── utils/                  # 共通ユーティリティ（必要に応じて）
-└── config/                 # 設定ファイル（必要に応じて）
-```
+## テスト実行方法
 
-## スクリプトの特徴
+### 個別機能テスト実行
 
-### 自動生成される機能
-- **スクリーンショット取得**: 計画されたタイミングでの自動撮影
-- **動画録画設定**: Playwrightのvideo機能有効化
-- **エラーハンドリング**: 基本的な例外処理
-- **待機処理**: 適切な待機時間を設定
-
-### スクリプト例
-```typescript
-import { test, expect } from '@playwright/test'
-
-test('商品追加機能', async ({ page }) => {
-  // 商品一覧ページ表示
-  await page.goto('/products')
-  await page.screenshot({ path: '../images/product-list-01.png' })
-
-  // 新規商品追加ボタンクリック
-  await page.click('button:has-text("新規追加")')
-  await page.screenshot({ path: '../images/product-add-button-02.png' })
-
-  // 商品情報入力
-  await page.fill('input[name="name"]', 'テスト商品')
-  await page.fill('input[name="price"]', '1000')
-  await page.screenshot({ path: '../images/product-form-03.png' })
-
-  // 保存実行
-  await page.click('button:has-text("保存")')
-  await page.screenshot({ path: '../images/product-save-04.png' })
-})
-```
-
-## 生成プロセス
-
-1. **テスト計画の読み込み**
-   - `plan/` からテスト計画ドキュメントを解析
-
-2. **スクリプトテンプレートの適用**
-   - 定義済みのテンプレートに操作ステップを注入
-
-3. **スクリーンショット設定の追加**
-   - 計画されたタイミングで撮影コードを挿入
-
-4. **動画録画設定の有効化**
-   - playwright.config.tsで動画録画を有効化
-
-## 使用方法
-
-### スクリプトの実行
 ```bash
-# 全スクリプト実行
-npm run test
+# ダッシュボード機能テスト
+npm run test:dashboard
 
-# 特定のスクリプト実行
-npx playwright test script/feature-name.spec.ts
+# 商品管理機能テスト
+npm run test:products
 
-# 動画・スクリーンショット付き実行
-npx playwright test --config=playwright.config.ts
+# 注文管理機能テスト
+npm run test:orders
+
+# ユーザー管理機能テスト
+npm run test:users
+
+# レポート機能テスト
+npm run test:reports
 ```
 
-### スクリプトの修正
-```typescript
-// 手動修正が必要な場合
-// （通常は自動生成を推奨）
+### 全機能テスト実行
+
+```bash
+# 全テスト実行
+npm run test:all
+
+# ブラウザを表示しながらテスト実行
+npm run test:headed
+
+# Playwright UIでテスト実行
+npm run test:ui
 ```
 
-## 設定ファイル
+## 生成されるファイル
 
-### playwright.config.ts
-```typescript
-export default defineConfig({
-  use: {
-    video: 'on',        // 動画録画有効化
-    screenshot: 'on',   // スクリーンショット有効化
-  },
-  // その他の設定...
-})
-```
+テスト実行により以下のファイルが生成されます：
+
+### スクリーンショット
+- `_docs/images/` ディレクトリにPNG形式で保存
+- 各テストステップでの画面キャプチャ
+
+### 動画
+- `_docs/movies/` ディレクトリにWebM形式で保存
+- テスト実行中の操作を録画
+
+### テストレポート
+- `_docs/plan/html-report/` にHTMLレポート
+- `_docs/plan/results.json` にJSON結果
+
+## テストの特徴
+
+- **動画録画**: 各テストで操作の動画を自動録画
+- **スクリーンショット**: 計画されたタイミングで自動撮影
+- **トレーシング**: Playwrightのトレーシング機能で詳細な実行ログ
+- **フルページキャプチャ**: スクリーンショットはフルページで撮影
 
 ## 注意事項
 
-- このディレクトリの内容は自動生成システムにより保守されます
-- 手動編集はテスト計画変更時に上書きされる可能性があります
-- カスタムロジックが必要な場合は別途管理してください
-- バージョン管理では生成スクリプトを除外することを検討
+1. テスト実行前にアプリケーションが `http://localhost:3000` で起動していることを確認してください
+2. テストデータは実際のアプリケーション状態に依存します
+3. 動画ファイルは容量が大きくなる可能性があります
 
-## 関連リンク
+## トラブルシューティング
 
-- [メイン戦略ドキュメント](../e2e-manual-automation-strategy.md)
-- [テスト計画ディレクトリ](../plan/)
-- [Playwright公式ドキュメント](https://playwright.dev/)
+### テストが失敗する場合
+1. アプリケーションが正しく起動しているか確認
+2. セレクタがアプリケーションの変更に合わせて更新されているか確認
+3. ネットワーク接続が安定しているか確認
+
+### 動画ファイルが生成されない場合
+1. `playwright.config.ts` の `video: 'on'` 設定を確認
+2. 十分なディスク容量があるか確認
